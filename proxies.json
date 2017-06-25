@@ -5,19 +5,19 @@
             "matchCondition": {
                 "route": "static/{*file}"
             },
-            "backendUri": "https://FUNCTION.azurewebsites.net/fun-static?file={file}"
+            "backendUri": "https://told-react-bible.azurewebsites.net/fun-static?file={file}"
         },
         "App": {
             "matchCondition": {
                 "route": "app/{*file}"
             },
-            "backendUri": "https://FUNCTION.azurewebsites.net/fun-static?file=app/"
+            "backendUri": "https://told-react-bible.azurewebsites.net/fun-static?file=app/"
         },
         "CustomReactRoute": {
             "matchCondition": {
                 "route": "custom/{*file}"
             },
-            "backendUri": "https://FUNCTION.azurewebsites.net/fun-static?file=app/"
+            "backendUri": "https://told-react-bible.azurewebsites.net/fun-static?file=app/"
         },
         "Root": {
             "matchCondition": {
@@ -26,7 +26,7 @@
                     "GET"
                 ]
             },
-            "backendUri": "https://FUNCTION.azurewebsites.net/fun-static?file=app/"
+            "backendUri": "https://told-react-bible.azurewebsites.net/fun-static?file=app/"
         }
     }
 }
