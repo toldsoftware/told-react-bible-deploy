@@ -1,1 +1,0 @@
-export const facebookAppId = '12345'; // localhost:3100
