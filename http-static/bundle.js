@@ -26293,6 +26293,7 @@ exports.app.use((req, res, next) => {
         }
         let body = data;
         let type = 'text/plain';
+        let encoding = 'utf8';
         if (p.match('\.html$')) {
             type = 'text/html';
         }
@@ -26307,19 +26308,23 @@ exports.app.use((req, res, next) => {
         }
         if (p.match('\.jpg$')) {
             type = 'image/jpeg';
+            encoding = 'binary';
         }
         if (p.match('\.png$')) {
             type = 'image/png';
+            encoding = 'binary';
         }
         if (p.match('\.gif$')) {
             type = 'image/gif';
+            encoding = 'binary';
         }
         if (p.match('\.ico$')) {
             type = 'image/x-icon';
+            encoding = 'binary';
         }
         res.setHeader('Cache-Control', 'max-age=300000, public');
         res.setHeader('Content-Type', type);
-        res.end(body, 'utf8');
+        res.end(body, encoding);
     });
 });
 
