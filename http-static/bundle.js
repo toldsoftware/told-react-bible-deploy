@@ -26322,7 +26322,7 @@ exports.app.use((req, res, next) => {
             return;
         }
         let body = data;
-        res.setHeader('Cache-Control', 'max-age=300000, public');
+        res.setHeader('Cache-Control', 'max-age=300, public');
         res.setHeader('Content-Type', type);
         res.end(body, encoding);
     });
