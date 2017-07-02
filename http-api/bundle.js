@@ -97187,7 +97187,7 @@ exports.app.get('/api/bible/:version/:book/:chapter', (req, res) => __awaiter(th
     const book = req.params.book;
     const chapter = req.params.chapter;
     res.json({
-        result: yield bibles_org_api_1.fetchChapterData(version, book, chapter),
+        data: yield bibles_org_api_1.fetchChapterData(version, book, chapter),
     });
 }));
 
