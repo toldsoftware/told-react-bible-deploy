@@ -101360,7 +101360,7 @@ function parsePassageText(chapter, passageText) {
     const paragraphs = o.childNodes.map(p => {
         if (p.nodeName === 'h3') {
             return {
-                k: 'h',
+                k: 'header',
                 x: [{ t: p.childNodes[0].value }],
             };
         }
@@ -101370,7 +101370,7 @@ function parsePassageText(chapter, passageText) {
                 x: p.childNodes.map(c => {
                     if (c.nodeName === 'sup') {
                         return {
-                            k: 'v',
+                            k: 'verse',
                             t: c.childNodes[0].value
                         };
                     }
@@ -101395,7 +101395,7 @@ function parsePassageText(chapter, passageText) {
         }
     });
     const numbered = paragraphs.filter(p => p).map((p, i) => {
-        let vNumbers = p.x.filter(x => x.k === 'v');
+        let vNumbers = p.x.filter(x => x.k === 'verse');
         if (!vNumbers.length) {
             return Object.assign({ vStart: undefined, vEnd: undefined }, p);
         }
@@ -101408,7 +101408,7 @@ function parsePassageText(chapter, passageText) {
         if (p.vStart) {
             return;
         }
-        if (p.k === 'h') {
+        if (p.k === 'header') {
             p.vStart = numbered[i + 1].vStart;
             p.vEnd = numbered[i + 1].vEnd;
         }
