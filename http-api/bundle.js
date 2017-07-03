@@ -101360,7 +101360,7 @@ function parsePassageText(chapter, passageText) {
     const paragraphs = o.childNodes.map(p => {
         if (p.nodeName === 'h3') {
             return {
-                k: 'header',
+                k: 'heading',
                 x: [{ t: p.childNodes[0].value }],
             };
         }
@@ -101412,7 +101412,7 @@ function parsePassageText(chapter, passageText) {
         if (p.vStart) {
             return;
         }
-        if (p.k !== 'header') {
+        if (p.k !== 'heading') {
             const n = numbered[i - 1];
             p.vStart = n.vStart;
             p.vEnd = n.vEnd;
@@ -101424,7 +101424,7 @@ function parsePassageText(chapter, passageText) {
         if (p.vStart) {
             return;
         }
-        if (p.k === 'header') {
+        if (p.k === 'heading') {
             const n = numberedReverse[i - 1];
             p.vStart = n.vStart;
             p.vEnd = n.vEnd;
